@@ -1,0 +1,654 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --emerald:#1a6b45;
+  --emerald-light:#2d9b65;
+  --emerald-pale:#e8f5ee;
+  --gold:#c8961c;
+  --gold-light:#f0c040;
+  --gold-pale:#fdf6e3;
+  --navy:#1a2e4a;
+  --navy-light:#2a4a6e;
+  --cream:#f8f6f0;
+  --white:#ffffff;
+  --gray:#f4f4f4;
+  --text:#1a1a2e;
+  --text-muted:#6b7280;
+  --border:#e5e7eb;
+}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;font-size:14px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 1.5rem}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-icon{width:38px;height:38px;background:linear-gradient(135deg,var(--emerald),var(--emerald-light));border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-family:'Amiri',serif;font-size:16px;font-weight:700}
+.nav-logo-text{font-size:13px;font-weight:600;color:var(--navy);line-height:1.3}
+.nav-logo-sub{font-size:10px;color:var(--emerald);font-weight:500}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-links a{font-size:13px;color:var(--text-muted);font-weight:500;padding:4px 0;border-bottom:2px solid transparent;transition:all .2s}
+.nav-links a:hover{color:var(--emerald);border-bottom-color:var(--emerald)}
+.nav-cta{background:var(--emerald);color:white!important;padding:7px 16px!important;border-radius:6px;border-bottom:none!important;font-size:12px!important}
+.nav-cta:hover{background:var(--emerald-light)!important;color:white!important}
+
+/* SECTIONS */
+section{padding:4rem 1.5rem}
+.container{max-width:1100px;margin:0 auto}
+.section-label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--emerald);margin-bottom:.5rem}
+.section-title{font-size:1.75rem;font-weight:700;color:var(--navy);margin-bottom:1rem;line-height:1.3}
+.section-sub{font-size:.95rem;color:var(--text-muted);max-width:520px;line-height:1.7}
+.section-header{margin-bottom:2.5rem}
+.centered{text-align:center}
+.centered .section-sub{margin:0 auto}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 40%,#1a4a3a 100%);color:white;padding:5rem 1.5rem;position:relative;overflow:hidden;min-height:520px;display:flex;align-items:center}
+.hero::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Ccircle cx='200' cy='200' r='180' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='40'/%3E%3Ccircle cx='200' cy='200' r='120' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='30'/%3E%3Cpolygon points='200,40 230,130 320,130 250,190 280,280 200,220 120,280 150,190 80,130 170,130' fill='rgba(200,150,28,0.08)'/%3E%3C/svg%3E") center/contain no-repeat;opacity:.6}
+.hero-content{position:relative;max-width:1100px;margin:0 auto;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(200,150,28,.2);border:1px solid rgba(200,150,28,.4);color:#f0c040;padding:4px 14px;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:.08em;margin-bottom:1.5rem}
+.hero h1{font-size:2.4rem;font-weight:700;line-height:1.25;margin-bottom:1rem;max-width:600px}
+.hero h1 span{color:var(--gold-light)}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.75);max-width:500px;line-height:1.7;margin-bottom:2rem}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--navy);padding:11px 24px;border-radius:7px;font-weight:600;font-size:13px;border:none;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:white;padding:11px 24px;border-radius:7px;font-weight:600;font-size:13px;border:1px solid rgba(255,255,255,.4);cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+.btn-outline:hover{background:rgba(255,255,255,.1);border-color:white}
+.hero-ornament{position:absolute;right:8%;top:50%;transform:translateY(-50%);opacity:.12;font-size:180px;font-family:'Amiri',serif;color:white;user-select:none;line-height:1}
+
+/* STATS BAR */
+.stats-bar{background:var(--emerald);padding:1.5rem}
+.stats-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+.stat-item{text-align:center;color:white}
+.stat-num{font-size:1.6rem;font-weight:700;color:var(--gold-light);line-height:1}
+.stat-label{font-size:11px;color:rgba(255,255,255,.75);margin-top:2px;font-weight:500}
+
+/* WHY SECTION */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;margin-top:2rem}
+.why-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:all .2s}
+.why-card:hover{border-color:var(--emerald);transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,107,69,.1)}
+.why-icon{width:44px;height:44px;background:var(--emerald-pale);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--emerald);font-size:20px;margin-bottom:1rem}
+.why-card h3{font-size:.9rem;font-weight:600;color:var(--navy);margin-bottom:.4rem}
+.why-card p{font-size:.8rem;color:var(--text-muted);line-height:1.6}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.about-visual{background:linear-gradient(135deg,var(--emerald-pale),var(--gold-pale));border-radius:16px;padding:2rem;position:relative;overflow:hidden}
+.about-visual::before{content:'﷽';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:100px;color:var(--emerald);opacity:.06;font-family:'Amiri',serif}
+.info-table{width:100%;border-collapse:collapse;margin-top:1.5rem}
+.info-table tr:not(:last-child){border-bottom:1px solid var(--border)}
+.info-table td{padding:.6rem 0;font-size:.85rem}
+.info-table td:first-child{color:var(--text-muted);width:45%}
+.info-table td:last-child{font-weight:500;color:var(--navy)}
+.visi-box{background:var(--emerald);color:white;border-radius:12px;padding:1.5rem;margin:1.5rem 0}
+.visi-box h4{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-light);margin-bottom:.5rem}
+.visi-box p{font-size:.9rem;font-style:italic;line-height:1.6}
+.misi-list{list-style:none}
+.misi-list li{display:flex;gap:.75rem;align-items:flex-start;padding:.5rem 0;font-size:.85rem;color:var(--text-muted)}
+.misi-list li::before{content:'';width:20px;height:20px;min-width:20px;background:var(--emerald-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%231a6b45' stroke-width='3'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;background-size:12px}
+
+/* PROGRAMS */
+.programs-bg{background:var(--cream)}
+.prog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem}
+.prog-card{background:white;border-radius:12px;padding:1.5rem;border:1px solid var(--border);transition:all .2s}
+.prog-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.prog-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:1rem}
+.prog-card h3{font-size:.95rem;font-weight:600;color:var(--navy);margin-bottom:.4rem}
+.prog-card p{font-size:.82rem;color:var(--text-muted);line-height:1.6}
+.prog-tag{display:inline-block;background:var(--emerald-pale);color:var(--emerald);font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px;margin-top:.75rem}
+
+/* TEACHERS */
+.teacher-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2.5rem}
+.t-stat{background:var(--navy);border-radius:12px;padding:1.5rem;text-align:center;color:white}
+.t-stat-num{font-size:2rem;font-weight:700;color:var(--gold-light)}
+.t-stat-label{font-size:.8rem;color:rgba(255,255,255,.7);margin-top:4px}
+.leadership-box{background:linear-gradient(135deg,var(--emerald),var(--navy));border-radius:16px;padding:2rem;color:white;margin-top:2rem}
+.ldr-icon{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:1rem}
+.ldr-quote{font-style:italic;font-size:.95rem;line-height:1.7;color:rgba(255,255,255,.85);margin:1rem 0}
+.ldr-name{font-weight:600;font-size:.9rem}
+.ldr-title{font-size:.8rem;color:rgba(255,255,255,.6)}
+
+/* FACILITIES */
+.fac-bg{background:var(--cream)}
+.fac-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.fac-card{background:white;border-radius:12px;padding:1.5rem;border:1px solid var(--border);text-align:center;transition:all .2s}
+.fac-card:hover{border-color:var(--emerald);box-shadow:0 4px 16px rgba(26,107,69,.08)}
+.fac-icon{font-size:2rem;color:var(--emerald);margin-bottom:.75rem}
+.fac-card h3{font-size:.85rem;font-weight:600;color:var(--navy);margin-bottom:.25rem}
+.fac-card p{font-size:.78rem;color:var(--text-muted)}
+
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gallery-item{border-radius:10px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#e8f5ee,#d4e8ff);display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid var(--border);cursor:pointer;transition:all .2s;position:relative}
+.gallery-item:hover{transform:scale(1.02)}
+.gallery-item:first-child{grid-column:span 2;aspect-ratio:2/1}
+.gallery-placeholder{font-size:2.5rem;color:var(--emerald);opacity:.5;margin-bottom:.5rem}
+.gallery-label{font-size:.75rem;font-weight:600;color:var(--text-muted)}
+
+/* ADMISSIONS */
+.adm-bg{background:var(--cream)}
+.steps-flow{display:flex;gap:0;margin:2rem 0;position:relative}
+.step-item{flex:1;text-align:center;position:relative}
+.step-item:not(:last-child)::after{content:'';position:absolute;top:20px;left:50%;width:100%;height:2px;background:linear-gradient(90deg,var(--emerald),var(--emerald-light));z-index:0}
+.step-circle{width:40px;height:40px;background:var(--emerald);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;margin:0 auto .75rem;position:relative;z-index:1;border:3px solid white;box-shadow:0 0 0 2px var(--emerald)}
+.step-label{font-size:.75rem;font-weight:600;color:var(--navy);line-height:1.4}
+.docs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-top:1.5rem}
+.doc-item{background:white;border:1px solid var(--border);border-radius:8px;padding:.75rem 1rem;display:flex;align-items:center;gap:.75rem;font-size:.85rem}
+.doc-icon{color:var(--gold);font-size:18px}
+.adm-cta{background:linear-gradient(135deg,var(--emerald),var(--navy));border-radius:16px;padding:2.5rem;text-align:center;color:white;margin-top:2rem}
+.adm-cta h3{font-size:1.3rem;font-weight:700;margin-bottom:.75rem}
+.adm-cta p{color:rgba(255,255,255,.75);font-size:.9rem;margin-bottom:1.5rem}
+
+/* NEWS */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.news-card{background:white;border-radius:12px;border:1px solid var(--border);overflow:hidden;transition:all .2s}
+.news-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.06);transform:translateY(-2px)}
+.news-img{height:140px;background:linear-gradient(135deg,var(--emerald-pale),var(--gold-pale));display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:var(--emerald);opacity:.5}
+.news-body{padding:1.25rem}
+.news-tag{display:inline-block;background:var(--emerald-pale);color:var(--emerald);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-bottom:.5rem;letter-spacing:.05em;text-transform:uppercase}
+.news-card h3{font-size:.9rem;font-weight:600;color:var(--navy);line-height:1.45;margin-bottom:.4rem}
+.news-date{font-size:.78rem;color:var(--text-muted);display:flex;align-items:center;gap:4px}
+
+/* CONTACT */
+.contact-bg{background:var(--cream)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.contact-info-item{display:flex;gap:1rem;align-items:flex-start;padding:1rem;background:white;border-radius:10px;border:1px solid var(--border);margin-bottom:.75rem}
+.ci-icon{width:36px;height:36px;min-width:36px;background:var(--emerald-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--emerald);font-size:16px}
+.ci-label{font-size:.78rem;color:var(--text-muted);font-weight:500}
+.ci-val{font-size:.88rem;color:var(--navy);font-weight:500;margin-top:1px}
+.map-embed{background:linear-gradient(135deg,#e8f5ee,#d4e8ff);border-radius:12px;height:220px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);font-size:2rem;color:var(--emerald);opacity:.6;overflow:hidden;position:relative}
+.map-pin{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.contact-form{background:white;border-radius:12px;border:1px solid var(--border);padding:1.5rem}
+.form-group{margin-bottom:1rem}
+.form-label{display:block;font-size:.82rem;font-weight:500;color:var(--navy);margin-bottom:.35rem}
+.form-input,.form-textarea{width:100%;padding:.6rem .9rem;border:1px solid var(--border);border-radius:7px;font-size:.85rem;color:var(--text);background:white;transition:border .2s;font-family:inherit;outline:none}
+.form-input:focus,.form-textarea:focus{border-color:var(--emerald)}
+.form-textarea{min-height:90px;resize:vertical}
+.btn-submit{width:100%;background:var(--emerald);color:white;padding:.75rem;border:none;border-radius:7px;font-weight:600;font-size:.9rem;cursor:pointer;transition:all .2s;margin-top:.5rem}
+.btn-submit:hover{background:var(--emerald-light)}
+.wa-btn-fixed{position:fixed;bottom:20px;right:20px;background:#25d366;color:white;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 4px 16px rgba(37,211,102,.4);z-index:999;cursor:pointer;transition:all .2s;border:none}
+.wa-btn-fixed:hover{transform:scale(1.1);box-shadow:0 6px 20px rgba(37,211,102,.5)}
+
+/* FOOTER */
+footer{background:var(--navy);color:white;padding:3rem 1.5rem 1.5rem}
+.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:2.5rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand-name{font-size:1rem;font-weight:700;margin-bottom:.25rem}
+.footer-brand-sub{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:1rem}
+.footer-about{font-size:.82rem;color:rgba(255,255,255,.6);line-height:1.7}
+.footer-col h4{font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-light);margin-bottom:1rem}
+.footer-col a,.footer-col p{font-size:.82rem;color:rgba(255,255,255,.6);display:block;margin-bottom:.4rem;cursor:pointer}
+.footer-col a:hover{color:white}
+.footer-contact-item{display:flex;gap:.5rem;align-items:flex-start;margin-bottom:.5rem;font-size:.82rem;color:rgba(255,255,255,.6)}
+.footer-contact-item i{font-size:14px;margin-top:2px;min-width:14px}
+.footer-bottom{max-width:1100px;margin:1.5rem auto 0;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:.78rem;color:rgba(255,255,255,.4)}
+.social-row{display:flex;gap:.6rem}
+.social-btn{width:30px;height:30px;background:rgba(255,255,255,.1);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;color:rgba(255,255,255,.6);cursor:pointer;transition:all .2s}
+.social-btn:hover{background:var(--emerald);color:white}
+.accr-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(200,150,28,.15);border:1px solid rgba(200,150,28,.3);color:var(--gold-light);padding:3px 10px;border-radius:5px;font-size:.75rem;font-weight:600;margin-top:.75rem}
+
+/* TABS */
+.tab-row{display:flex;gap:8px;margin-bottom:2rem;flex-wrap:wrap}
+.tab{padding:6px 16px;border-radius:20px;font-size:.82rem;font-weight:500;cursor:pointer;border:1px solid var(--border);color:var(--text-muted);background:white;transition:all .2s}
+.tab.active{background:var(--emerald);color:white;border-color:var(--emerald)}
+.faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:.75rem;overflow:hidden}
+.faq-q{padding:1rem 1.25rem;font-size:.9rem;font-weight:500;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:white}
+.faq-a{padding:0 1.25rem 1rem;font-size:.85rem;color:var(--text-muted);line-height:1.7;background:white}
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2rem}
+.testi-card{background:white;border-radius:12px;border:1px solid var(--border);padding:1.5rem}
+.testi-stars{color:var(--gold);font-size:14px;margin-bottom:.75rem;letter-spacing:2px}
+.testi-text{font-size:.85rem;color:var(--text-muted);line-height:1.7;margin-bottom:1rem;font-style:italic}
+.testi-name{font-size:.85rem;font-weight:600;color:var(--navy)}
+.testi-role{font-size:.78rem;color:var(--text-muted)}
+
+/* LANG TOGGLE */
+.lang-toggle{display:flex;gap:4px;background:var(--gray);border-radius:6px;padding:3px}
+.lang-btn{padding:3px 10px;border-radius:4px;font-size:11px;font-weight:600;cursor:pointer;border:none;background:transparent;color:var(--text-muted);transition:all .2s}
+.lang-btn.active{background:white;color:var(--navy);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+
+@media(max-width:700px){
+.about-grid,.contact-grid{grid-template-columns:1fr}
+.stats-grid{grid-template-columns:repeat(3,1fr)}
+.gallery-grid{grid-template-columns:repeat(2,1fr)}
+.gallery-item:first-child{grid-column:span 1;aspect-ratio:4/3}
+.news-grid,.testimonial-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr 1fr}
+.steps-flow{flex-wrap:wrap}
+.step-item{flex:0 0 45%;margin-bottom:1rem}
+.step-item::after{display:none}
+.nav-links{display:none}
+.teacher-stats{grid-template-columns:1fr}
+.hero h1{font-size:1.6rem}
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/6282138689087" target="_blank" style="text-decoration:none">
+<button class="wa-btn-fixed" aria-label="Hubungi via WhatsApp">
+  <i class="ti ti-brand-whatsapp"></i>
+</button>
+</a>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <div class="nav-logo-icon">ق</div>
+      <div>
+        <div class="nav-logo-text">SLB Islam Qothrunnada</div>
+        <div class="nav-logo-sub">Bantul, Yogyakarta</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#about">Tentang</a>
+      <a href="#programs">Program</a>
+      <a href="#facilities">Fasilitas</a>
+      <a href="#admissions">Pendaftaran</a>
+      <a href="#news">Berita</a>
+      <a href="#contact">Kontak</a>
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-id" onclick="setLang('id')">ID</button>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#admissions" class="nav-cta">Daftar Sekarang</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-ornament">☽</div>
+  <div class="hero-content">
+    <div class="hero-badge"><i class="ti ti-star" aria-hidden="true"></i> Akreditasi B · NPSN 69956379</div>
+    <h1 id="hero-title">Pendidikan Inklusif<br>Berbasis <span>Nilai-Nilai Islam</span></h1>
+    <p class="hero-sub" id="hero-sub">Mendampingi setiap anak berkebutuhan khusus untuk berkembang, berprestasi, dan mandiri dengan landasan akhlak mulia dan keterampilan hidup.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('admissions').scrollIntoView({behavior:'smooth'})">
+        <i class="ti ti-clipboard-plus" aria-hidden="true"></i> <span id="btn-daftar">Daftar Sekarang</span>
+      </button>
+      <button class="btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        <i class="ti ti-phone" aria-hidden="true"></i> <span id="btn-hubungi">Hubungi Kami</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat-item"><div class="stat-num">20</div><div class="stat-label">Guru Profesional</div></div>
+    <div class="stat-item"><div class="stat-num">58</div><div class="stat-label">Siswa Aktif</div></div>
+    <div class="stat-item"><div class="stat-num">14</div><div class="stat-label">Rombongan Belajar</div></div>
+    <div class="stat-item"><div class="stat-num">12</div><div class="stat-label">Ruang Kelas</div></div>
+    <div class="stat-item"><div class="stat-num">B</div><div class="stat-label">Akreditasi</div></div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Keunggulan Kami</div>
+      <div class="section-title">Mengapa Memilih Kami?</div>
+      <div class="section-sub">Kami hadir dengan pendekatan holistik untuk mendampingi setiap anak berkebutuhan khusus meraih potensi terbaiknya.</div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon"><i class="ti ti-moon-stars" aria-hidden="true"></i></div><h3>Pendidikan Berbasis Islam</h3><p>Nilai-nilai keislaman terintegrasi dalam setiap aspek pembelajaran dan kehidupan sekolah.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="ti ti-user-heart" aria-hidden="true"></i></div><h3>Pendampingan Individual</h3><p>Program pembelajaran disesuaikan dengan kebutuhan unik setiap peserta didik secara personal.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="ti ti-shield-check" aria-hidden="true"></i></div><h3>Lingkungan Aman & Nyaman</h3><p>Suasana belajar yang aman, inklusif, dan ramah bagi anak berkebutuhan khusus.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="ti ti-users" aria-hidden="true"></i></div><h3>Rasio Guru-Siswa Ideal</h3><p>Perbandingan guru dan siswa yang ideal memastikan perhatian penuh bagi setiap anak.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="ti ti-growth" aria-hidden="true"></i></div><h3>Fokus Kemandirian</h3><p>Program keterampilan hidup untuk mendorong kemandirian anak dalam kehidupan sehari-hari.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="background:var(--cream)">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="section-label">Tentang Sekolah</div>
+        <div class="section-title">Profil SLB Islam Qothrunnada</div>
+        <p style="font-size:.9rem;color:var(--text-muted);line-height:1.8;margin-bottom:1.25rem">SLB Islam Qothrunnada adalah sekolah luar biasa berbasis Islam yang berkomitmen memberikan layanan pendidikan berkualitas bagi anak berkebutuhan khusus melalui pendekatan akademik, spiritual, sosial, dan keterampilan hidup.</p>
+        <div class="visi-box">
+          <h4><i class="ti ti-eye" aria-hidden="true"></i> Visi</h4>
+          <p>"Mewujudkan peserta didik berkebutuhan khusus yang mandiri, berakhlak mulia, berprestasi, dan berlandaskan nilai-nilai Islam."</p>
+        </div>
+        <h4 style="font-size:.82rem;font-weight:600;color:var(--navy);margin-bottom:.75rem;letter-spacing:.06em;text-transform:uppercase">Misi Sekolah</h4>
+        <ul class="misi-list">
+          <li>Menyelenggarakan pendidikan inklusif berkualitas</li>
+          <li>Menanamkan nilai-nilai keislaman dalam kehidupan sehari-hari</li>
+          <li>Mengembangkan potensi akademik dan non-akademik siswa</li>
+          <li>Mendorong kemandirian dan keterampilan hidup</li>
+          <li>Membangun kemitraan dengan orang tua dan masyarakat</li>
+        </ul>
+      </div>
+      <div>
+        <div class="about-visual" style="margin-bottom:1.5rem;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center">
+          <div style="font-size:4rem;font-family:'Amiri',serif;color:var(--emerald);line-height:1;position:relative;z-index:1">ق</div>
+          <div style="font-size:.9rem;font-weight:700;color:var(--navy);margin-top:.5rem;position:relative;z-index:1">SLB Islam Qothrunnada</div>
+          <div style="font-size:.78rem;color:var(--text-muted);position:relative;z-index:1">Menumbuhkan Potensi, Membentuk Karakter Islami</div>
+          <div class="accr-badge"><i class="ti ti-award" aria-hidden="true"></i> Terakreditasi B</div>
+        </div>
+        <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:1.25rem">
+          <h4 style="font-size:.82rem;font-weight:600;color:var(--navy);margin-bottom:1rem;text-transform:uppercase;letter-spacing:.06em">Informasi Sekolah</h4>
+          <table class="info-table">
+            <tr><td>Status</td><td>Swasta</td></tr>
+            <tr><td>NPSN</td><td>69956379</td></tr>
+            <tr><td>Akreditasi</td><td>B</td></tr>
+            <tr><td>Kurikulum</td><td>Kurikulum SDLB Merdeka</td></tr>
+            <tr><td>Penyelenggaraan</td><td>Pagi / 5 Hari</td></tr>
+            <tr><td>Yayasan</td><td>YPI Nur Aini</td></tr>
+            <tr><td>Semester</td><td>2025/2026 Genap</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs" class="programs-bg">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="section-label">Kurikulum & Program</div>
+      <div class="section-title">Program Pendidikan Kami</div>
+      <div class="section-sub">Berbasis Kurikulum SDLB Merdeka dengan pendekatan pembelajaran adaptif sesuai kebutuhan peserta didik.</div>
+    </div>
+    <div class="prog-grid">
+      <div class="prog-card"><div class="prog-icon" style="background:#e8f5ee;color:var(--emerald)"><i class="ti ti-book-2" aria-hidden="true"></i></div><h3>Program Akademik</h3><p>Pembelajaran membaca, menulis, berhitung, dan sains yang disesuaikan dengan kemampuan individual siswa.</p><span class="prog-tag">Kurikulum Merdeka</span></div>
+      <div class="prog-card"><div class="prog-icon" style="background:#fdf6e3;color:var(--gold)"><i class="ti ti-moon-stars" aria-hidden="true"></i></div><h3>Pendidikan Karakter Islami</h3><p>Penanaman akhlak mulia, adab, dan nilai-nilai keislaman dalam kehidupan sehari-hari.</p><span class="prog-tag">Karakter Islam</span></div>
+      <div class="prog-card"><div class="prog-icon" style="background:#e8f0ff;color:#3b6bd6"><i class="ti ti-pray" aria-hidden="true"></i></div><h3>Kegiatan Keagamaan</h3><p>Shalat berjamaah, hafalan doa, belajar Al-Quran, dan perayaan hari besar Islam.</p><span class="prog-tag">Spiritual</span></div>
+      <div class="prog-card"><div class="prog-icon" style="background:#fff0f0;color:#d63b3b"><i class="ti ti-tools" aria-hidden="true"></i></div><h3>Keterampilan Hidup</h3><p>Pelatihan keterampilan praktis untuk meningkatkan kemandirian siswa dalam kehidupan sehari-hari.</p><span class="prog-tag">Life Skills</span></div>
+      <div class="prog-card"><div class="prog-icon" style="background:#f0f9e8;color:#4a8a1a"><i class="ti ti-messages" aria-hidden="true"></i></div><h3>Sosial & Komunikasi</h3><p>Pengembangan kemampuan berinteraksi, berkomunikasi, dan bersosialisasi dengan lingkungan sekitar.</p><span class="prog-tag">Sosial</span></div>
+      <div class="prog-card"><div class="prog-icon" style="background:#f3e8ff;color:#7c3aed"><i class="ti ti-user-check" aria-hidden="true"></i></div><h3>Pembelajaran Individual</h3><p>Program IEP (Individual Education Plan) yang dirancang khusus untuk setiap peserta didik.</p><span class="prog-tag">Personal</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHERS -->
+<section id="teachers">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Tenaga Pendidik</div>
+      <div class="section-title">Guru & Staf Profesional</div>
+      <div class="section-sub">Tim pendidik kami berdedikasi tinggi dengan kualifikasi dan pelatihan khusus pendidikan luar biasa.</div>
+    </div>
+    <div class="teacher-stats">
+      <div class="t-stat"><div class="t-stat-num">20</div><div class="t-stat-label">Guru & Tenaga Kependidikan</div></div>
+      <div class="t-stat"><div class="t-stat-num">85%</div><div class="t-stat-label">Guru Berkualifikasi S1/S2</div></div>
+      <div class="t-stat"><div class="t-stat-num">25%</div><div class="t-stat-label">Guru Bersertifikasi</div></div>
+    </div>
+    <div class="leadership-box">
+      <div class="ldr-icon"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+      <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-light);margin-bottom:.25rem">Pesan Kepala Sekolah</div>
+      <div class="ldr-quote">"Kami percaya bahwa setiap anak berkebutuhan khusus memiliki potensi yang luar biasa. Dengan bimbingan penuh kasih, nilai-nilai Islam yang kuat, dan metode pembelajaran yang tepat, kami berkomitmen untuk membuka jalan bagi setiap siswa menuju masa depan yang cerah dan bermakna."</div>
+      <div class="ldr-name">Kepala Sekolah</div>
+      <div class="ldr-title">SLB Islam Qothrunnada, Bantul</div>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section id="facilities" class="fac-bg">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="section-label">Sarana & Prasarana</div>
+      <div class="section-title">Fasilitas Sekolah</div>
+      <div class="section-sub">Sarana pembelajaran yang mendukung pertumbuhan dan perkembangan optimal setiap siswa.</div>
+    </div>
+    <div class="fac-grid">
+      <div class="fac-card"><div class="fac-icon"><i class="ti ti-door" aria-hidden="true"></i></div><h3>12 Ruang Kelas</h3><p>Ruang belajar nyaman dan kondusif</p></div>
+      <div class="fac-card"><div class="fac-icon"><i class="ti ti-books" aria-hidden="true"></i></div><h3>Perpustakaan</h3><p>Koleksi buku edukatif lengkap</p></div>
+      <div class="fac-card"><div class="fac-icon"><i class="ti ti-wifi" aria-hidden="true"></i></div><h3>Internet Broadband</h3><p>Koneksi internet cepat & stabil</p></div>
+      <div class="fac-card"><div class="fac-icon"><i class="ti ti-bolt" aria-hidden="true"></i></div><h3>Listrik PLN 2200 VA</h3><p>Pasokan listrik memadai</p></div>
+      <div class="fac-card"><div class="fac-icon"><i class="ti ti-map" aria-hidden="true"></i></div><h3>Area 1.354 m²</h3><p>Lahan sekolah yang luas</p></div>
+      <div class="fac-card"><div class="fac-icon"><i class="ti ti-heart" aria-hidden="true"></i></div><h3>Ruang Terapi</h3><p>Fasilitas terapi pendukung belajar</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY / STUDENT LIFE -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Kehidupan Siswa</div>
+      <div class="section-title">Aktivitas & Kegiatan</div>
+      <div class="section-sub">Sekilas momen berharga kehidupan belajar dan berkembang siswa SLB Islam Qothrunnada.</div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" style="background:linear-gradient(135deg,#e8f5ee,#c0ddb8)"><div class="gallery-placeholder"><i class="ti ti-book-open" aria-hidden="true"></i></div><div class="gallery-label">Kegiatan Belajar</div></div>
+      <div class="gallery-item" style="background:linear-gradient(135deg,#fdf6e3,#f5dfa0)"><div class="gallery-placeholder"><i class="ti ti-moon-stars" aria-hidden="true"></i></div><div class="gallery-label">Kegiatan Islami</div></div>
+      <div class="gallery-item" style="background:linear-gradient(135deg,#f0e8ff,#d4b8f5)"><div class="gallery-placeholder"><i class="ti ti-tools" aria-hidden="true"></i></div><div class="gallery-label">Kegiatan Keterampilan</div></div>
+      <div class="gallery-item" style="background:linear-gradient(135deg,#ffe8e8,#f5b8b8)"><div class="gallery-placeholder"><i class="ti ti-confetti" aria-hidden="true"></i></div><div class="gallery-label">Perayaan Hari Besar</div></div>
+      <div class="gallery-item" style="background:linear-gradient(135deg,#e8f0ff,#b8c8f5)"><div class="gallery-placeholder"><i class="ti ti-heart-handshake" aria-hidden="true"></i></div><div class="gallery-label">Kegiatan Sosial</div></div>
+      <div class="gallery-item" style="background:linear-gradient(135deg,#e8ffe8,#b8f5b8)"><div class="gallery-placeholder"><i class="ti ti-trophy" aria-hidden="true"></i></div><div class="gallery-label">Prestasi Siswa</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background:var(--cream)">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="section-label">Testimoni</div>
+      <div class="section-title">Kata Orang Tua Siswa</div>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">"Anak kami berkembang pesat sejak bersekolah di sini. Guru-guru sangat sabar dan penuh kasih dalam mendampingi anak berkebutuhan khusus."</div><div class="testi-name">Ibu Sari</div><div class="testi-role">Orang Tua Siswa Kelas 3</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">"Program keislaman yang diterapkan sangat bagus. Anak kami kini hafal doa-doa sehari-hari dan lebih mandiri dalam kehidupan sehari-hari."</div><div class="testi-name">Bapak Ahmad</div><div class="testi-role">Orang Tua Siswa Kelas 5</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">"Komunikasi dengan guru sangat baik dan transparan. Kami selalu mendapat kabar perkembangan anak setiap minggunya."</div><div class="testi-name">Ibu Dewi</div><div class="testi-role">Orang Tua Siswa Kelas 2</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSIONS -->
+<section id="admissions" class="adm-bg">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Penerimaan Siswa Baru</div>
+      <div class="section-title">Proses Pendaftaran</div>
+      <div class="section-sub">Kami menyambut setiap anak berkebutuhan khusus. Proses pendaftaran mudah dan kami siap membantu.</div>
+    </div>
+    <div class="steps-flow">
+      <div class="step-item"><div class="step-circle">1</div><div class="step-label">Hubungi<br>Sekolah</div></div>
+      <div class="step-item"><div class="step-circle">2</div><div class="step-label">Konsultasi<br>Orang Tua</div></div>
+      <div class="step-item"><div class="step-circle">3</div><div class="step-label">Observasi<br>Awal</div></div>
+      <div class="step-item"><div class="step-circle">4</div><div class="step-label">Pendaftaran<br>Resmi</div></div>
+      <div class="step-item"><div class="step-circle">5</div><div class="step-label">Penempatan<br>Program</div></div>
+    </div>
+    <h4 style="font-size:.85rem;font-weight:600;color:var(--navy);margin-bottom:.75rem;text-transform:uppercase;letter-spacing:.06em">Dokumen yang Diperlukan</h4>
+    <div class="docs-grid">
+      <div class="doc-item"><i class="ti ti-file-text doc-icon" aria-hidden="true"></i><span>Akta Kelahiran</span></div>
+      <div class="doc-item"><i class="ti ti-users doc-icon" aria-hidden="true"></i><span>Kartu Keluarga</span></div>
+      <div class="doc-item"><i class="ti ti-camera doc-icon" aria-hidden="true"></i><span>Pas Foto Terbaru</span></div>
+      <div class="doc-item"><i class="ti ti-clipboard doc-icon" aria-hidden="true"></i><span>Dokumen Pendukung Lainnya</span></div>
+    </div>
+    <div class="adm-cta">
+      <h3>Daftar Menjadi Bagian dari Keluarga Besar SLB Islam Qothrunnada</h3>
+      <p>Kami siap mendampingi perjalanan tumbuh kembang putra-putri Anda dengan penuh dedikasi dan kasih sayang.</p>
+      <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        <i class="ti ti-phone-call" aria-hidden="true"></i> Hubungi Kami Sekarang
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+  <div class="container">
+    <div class="section-header" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
+      <div>
+        <div class="section-label">Berita & Pengumuman</div>
+        <div class="section-title" style="margin-bottom:0">Informasi Terkini</div>
+      </div>
+      <button class="tab active">Lihat Semua</button>
+    </div>
+    <div class="news-grid">
+      <div class="news-card"><div class="news-img"><i class="ti ti-star" aria-hidden="true"></i></div><div class="news-body"><div class="news-tag">Prestasi</div><h3>Siswa SLB Islam Qothrunnada Raih Juara di Olimpiade Seni Inklusi 2025</h3><div class="news-date"><i class="ti ti-calendar" aria-hidden="true"></i> 15 Mei 2025</div></div></div>
+      <div class="news-card"><div class="news-img"><i class="ti ti-moon-stars" aria-hidden="true"></i></div><div class="news-body"><div class="news-tag">Kegiatan</div><h3>Peringatan Maulid Nabi Muhammad SAW Penuh Kegembiraan dan Hikmah</h3><div class="news-date"><i class="ti ti-calendar" aria-hidden="true"></i> 28 Oktober 2024</div></div></div>
+      <div class="news-card"><div class="news-img"><i class="ti ti-school" aria-hidden="true"></i></div><div class="news-body"><div class="news-tag">Akademik</div><h3>Penerapan Kurikulum SDLB Merdeka Berjalan Sukses di Semester Genap</h3><div class="news-date"><i class="ti ti-calendar" aria-hidden="true"></i> 10 Januari 2025</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--cream)">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="section-label">FAQ</div>
+      <div class="section-title">Pertanyaan yang Sering Diajukan</div>
+    </div>
+    <div style="max-width:700px;margin:0 auto" id="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Apakah sekolah ini menerima semua jenis kebutuhan khusus? <i class="ti ti-chevron-down" aria-hidden="true"></i></div>
+        <div class="faq-a" style="display:none">Ya, SLB Islam Qothrunnada menerima anak berkebutuhan khusus dengan berbagai kondisi, termasuk tunagrahita, tunarungu, autisme, dan lainnya. Tim kami akan melakukan observasi awal untuk menentukan program yang tepat.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Berapa biaya pendidikan di SLB Islam Qothrunnada? <i class="ti ti-chevron-down" aria-hidden="true"></i></div>
+        <div class="faq-a" style="display:none">Untuk informasi biaya pendidikan, silakan hubungi kami langsung melalui telepon atau WhatsApp. Kami berkomitmen untuk memberikan pendidikan berkualitas yang terjangkau.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Bagaimana sistem pembelajaran di sekolah ini? <i class="ti ti-chevron-down" aria-hidden="true"></i></div>
+        <div class="faq-a" style="display:none">Kami menggunakan Kurikulum SDLB Merdeka dengan pendekatan adaptif individual. Setiap siswa memiliki Program Pembelajaran Individual (IEP) yang disesuaikan dengan kebutuhan dan kemampuannya.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Apakah ada program untuk orang tua? <i class="ti ti-chevron-down" aria-hidden="true"></i></div>
+        <div class="faq-a" style="display:none">Ya, kami memiliki program kemitraan dengan orang tua berupa pertemuan rutin, konsultasi perkembangan anak, dan pelatihan parenting untuk anak berkebutuhan khusus.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-bg">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Hubungi Kami</div>
+      <div class="section-title">Kontak & Lokasi</div>
+      <div class="section-sub">Kami siap menjawab pertanyaan Anda dan mendampingi proses pendaftaran putra-putri Anda.</div>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info-item"><div class="ci-icon"><i class="ti ti-map-pin" aria-hidden="true"></i></div><div><div class="ci-label">Alamat</div><div class="ci-val">Glagah Lor RT.02 Tamanan Banguntapan, Bantul, Yogyakarta</div></div></div>
+        <div class="contact-info-item"><div class="ci-icon"><i class="ti ti-phone" aria-hidden="true"></i></div><div><div class="ci-label">Telepon / WhatsApp</div><div class="ci-val">0821-3868-9087</div></div></div>
+        <div class="contact-info-item"><div class="ci-icon"><i class="ti ti-mail" aria-hidden="true"></i></div><div><div class="ci-label">Email</div><div class="ci-val">slb.islamqothrunnada@gmail.com</div></div></div>
+        <div class="contact-info-item"><div class="ci-icon"><i class="ti ti-clock" aria-hidden="true"></i></div><div><div class="ci-label">Jam Operasional</div><div class="ci-val">Senin–Jumat, 07.00–14.00 WIB</div></div></div>
+        <div class="map-embed" style="margin-top:1rem">
+          <div class="map-pin" style="text-align:center">
+            <div style="font-size:3rem;color:var(--emerald)"><i class="ti ti-map-pin" aria-hidden="true"></i></div>
+            <div style="font-size:.8rem;font-weight:600;color:var(--navy);margin-top:.25rem">SLB Islam Qothrunnada</div>
+            <div style="font-size:.75rem;color:var(--text-muted)">Banguntapan, Bantul</div>
+            <a href="https://www.google.com/maps?q=-7.8507446,110.3846058" target="_blank" style="display:inline-block;margin-top:.5rem;background:var(--emerald);color:white;padding:4px 12px;border-radius:5px;font-size:.75rem;font-weight:500">Buka di Google Maps</a>
+          </div>
+        </div>
+        <div style="display:flex;gap:.75rem;margin-top:1rem;flex-wrap:wrap">
+          <a href="https://wa.me/6282138689087" target="_blank" style="flex:1;min-width:140px;background:#25d366;color:white;padding:.6rem 1rem;border-radius:8px;display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.85rem;font-weight:600">
+            <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> WhatsApp
+          </a>
+          <a href="tel:+6282138689087" style="flex:1;min-width:140px;background:var(--emerald);color:white;padding:.6rem 1rem;border-radius:8px;display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.85rem;font-weight:600">
+            <i class="ti ti-phone" aria-hidden="true"></i> Telepon
+          </a>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h4 style="font-size:.9rem;font-weight:600;color:var(--navy);margin-bottom:1.25rem">Kirim Pesan</h4>
+        <div class="form-group"><label class="form-label">Nama Lengkap</label><input type="text" class="form-input" placeholder="Masukkan nama lengkap"></div>
+        <div class="form-group"><label class="form-label">Nomor Telepon</label><input type="tel" class="form-input" placeholder="08xx-xxxx-xxxx"></div>
+        <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" placeholder="email@contoh.com"></div>
+        <div class="form-group"><label class="form-label">Pesan</label><textarea class="form-textarea" placeholder="Tuliskan pertanyaan atau keperluan Anda..."></textarea></div>
+        <button class="btn-submit">Kirim Pesan <i class="ti ti-send" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:.75rem">
+        <div style="width:36px;height:36px;background:var(--emerald);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-family:'Amiri',serif;font-size:16px">ق</div>
+        <div>
+          <div class="footer-brand-name">SLB Islam Qothrunnada</div>
+          <div class="footer-brand-sub">Bantul, Yogyakarta</div>
+        </div>
+      </div>
+      <div class="footer-about">Sekolah Luar Biasa berbasis Islam yang berkomitmen memberikan pendidikan berkualitas bagi anak berkebutuhan khusus. Di bawah naungan Yayasan Pendidikan Islam Nur Aini.</div>
+      <div class="accr-badge" style="margin-top:1rem"><i class="ti ti-award" aria-hidden="true"></i> Terakreditasi B · NPSN 69956379</div>
+    </div>
+    <div>
+      <h4>Navigasi</h4>
+      <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Tentang Kami</a>
+      <a onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">Program</a>
+      <a onclick="document.getElementById('facilities').scrollIntoView({behavior:'smooth'})">Fasilitas</a>
+      <a onclick="document.getElementById('admissions').scrollIntoView({behavior:'smooth'})">Pendaftaran</a>
+      <a onclick="document.getElementById('news').scrollIntoView({behavior:'smooth'})">Berita</a>
+    </div>
+    <div>
+      <h4>Program</h4>
+      <p>Program Akademik</p>
+      <p>Pendidikan Islami</p>
+      <p>Keterampilan Hidup</p>
+      <p>Pengembangan Sosial</p>
+      <p>Pembelajaran Individual</p>
+    </div>
+    <div>
+      <h4>Kontak</h4>
+      <div class="footer-contact-item"><i class="ti ti-map-pin" aria-hidden="true"></i><span>Glagah Lor RT.02 Tamanan Banguntapan, Bantul, DIY</span></div>
+      <div class="footer-contact-item"><i class="ti ti-phone" aria-hidden="true"></i><span>0821-3868-9087</span></div>
+      <div class="footer-contact-item"><i class="ti ti-mail" aria-hidden="true"></i><span>slb.islamqothrunnada@gmail.com</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 SLB Islam Qothrunnada. All Rights Reserved.</div>
+    <div class="social-row">
+      <div class="social-btn"><i class="ti ti-brand-facebook" aria-hidden="true"></i></div>
+      <div class="social-btn"><i class="ti ti-brand-instagram" aria-hidden="true"></i></div>
+      <div class="social-btn"><i class="ti ti-brand-youtube" aria-hidden="true"></i></div>
+      <div class="social-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(el){
+  var a=el.nextElementSibling;
+  var icon=el.querySelector('.ti');
+  if(a.style.display==='none'){a.style.display='block';icon.style.transform='rotate(180deg)'}
+  else{a.style.display='none';icon.style.transform='rotate(0)'}
+}
+
+var texts={
+  id:{heroTitle:'Pendidikan Inklusif<br>Berbasis <span style="color:var(--gold-light)">Nilai-Nilai Islam</span>',heroSub:'Mendampingi setiap anak berkebutuhan khusus untuk berkembang, berprestasi, dan mandiri dengan landasan akhlak mulia dan keterampilan hidup.',btnDaftar:'Daftar Sekarang',btnHubungi:'Hubungi Kami'},
+  en:{heroTitle:'Inclusive Education<br>Based on <span style="color:var(--gold-light)">Islamic Values</span>',heroSub:'Guiding every child with special needs to grow, achieve, and become independent through strong Islamic character and life skills.',btnDaftar:'Register Now',btnHubungi:'Contact Us'}
+};
+function setLang(l){
+  document.getElementById('hero-title').innerHTML=texts[l].heroTitle;
+  document.getElementById('hero-sub').textContent=texts[l].heroSub;
+  document.getElementById('btn-daftar').textContent=texts[l].btnDaftar;
+  document.getElementById('btn-hubungi').textContent=texts[l].btnHubungi;
+  document.getElementById('btn-id').classList.toggle('active',l==='id');
+  document.getElementById('btn-en').classList.toggle('active',l==='en');
+}
+
+document.querySelector('.btn-submit').addEventListener('click',function(e){
+  e.preventDefault();
+  this.textContent='✓ Pesan Terkirim!';
+  this.style.background='#25d366';
+  setTimeout(()=>{this.innerHTML='Kirim Pesan <i class="ti ti-send" aria-hidden="true"></i>';this.style.background=''},3000);
+});
+</script>
+</body>
+</html>
